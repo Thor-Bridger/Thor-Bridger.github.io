@@ -1,0 +1,89 @@
+/* General page styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* The main card container */
+.card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Optional: If you add a profile picture */
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #f0f2f5;
+}
+
+/* Your name */
+h1 {
+    font-weight: 600;
+    font-size: 2em;
+    margin: 10px 0 5px 0;
+}
+
+/* Your title/specialization */
+.title {
+    font-weight: 300;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Container for the buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between buttons */
+}
+
+/* General button styling */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    color: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+}
+
+/* Styles for the icons inside the buttons */
+.btn svg {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Makes buttons lift up slightly when hovered */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific colors for each button */
+.btn.linkedin {
+    background-color: #0077B5;
+}
+
+.btn.behance {
+    background-color: #053eff;
+}
