@@ -1,103 +1,121 @@
-/* General page styling */
+/* --- Global Styles & Variables --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #0d2c54; /* Deep Blue */
+    --border-color: #dddddd;
+    --body-font: 'Source Sans Pro', sans-serif;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #121417 0%, #1c2026 100%);
-    color: #cdd6f4; /* Soft lavender-white text */
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
-    padding: 0 40px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
 }
 
-/* --- Main Header --- */
-.main-header {
-    text-align: center;
-    padding: 40px 20px 30px 20px;
-    flex-shrink: 0; /* Prevents header from shrinking */
+/* --- Header Section --- */
+.site-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 40px;
 }
 
-.main-header h1 {
-    font-weight: 700;
-    font-size: 2.5em;
-    letter-spacing: 2px;
-    color: #ffffff;
-    margin: 0 0 5px 0;
-}
-
-.main-header .subtitle {
-    font-weight: 400;
-    font-size: 1.1em;
-    color: #a6adc8; /* Lighter grey for subtitle */
-    margin-bottom: 25px;
-}
-
-.linkedin-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #0077B5;
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1em;
-    transition: all 0.3s ease;
-}
-
-.linkedin-btn:hover {
-    background-color: #008cce;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
-}
-
-/* --- Two Column Container --- */
-.container {
-    display: flex;
-    gap: 40px;
-    width: 100%;
-    max-width: 1400px;
+.header-content {
+    max-width: 1200px;
     margin: 0 auto;
-    flex-grow: 1; /* Allows container to fill available vertical space */
-    overflow: hidden; /* Prevents container from causing page scroll */
-    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
 }
 
-.column {
-    flex: 1;
-    background-color: rgba(30, 34, 42, 0.7); /* Translucent card background */
-    border: 1px solid #313244; /* Subtle border */
-    padding: 30px;
-    border-radius: 12px;
-    overflow-y: auto; /* This makes each column scroll independently */
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    margin-right: 25px;
 }
 
-.column h2 {
+.header-tagline {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 20px 15px;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-left a:hover {
+    color: var(--primary-color);
+}
+
+.nav-left a.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.nav-right .social-icon {
+    height: 24px;
+    width: 24px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.nav-right a:hover .social-icon {
+    opacity: 1;
+}
+
+/* --- Main Content Wrapper --- */
+.content-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2em;
     font-weight: 700;
-    font-size: 1.2em;
-    letter-spacing: 1.5px;
-    color: #89b4fa; /* A nice accent blue */
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 25px;
-    position: sticky; /* Keeps header at top on scroll */
-    top: -30px; /* Aligns with padding */
-    background: inherit; /* Inherits the translucent background */
-    padding-top: 30px;
-    padding-bottom: 15px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 
-/* --- Entry Styling (for each job/project) --- */
+p {
+    line-height: 1.7;
+    font-size: 1.1em;
+    margin: 0 0 20px 0;
+}
+
+/* --- Experience Page Specific --- */
 .entry {
-    border-bottom: 1px solid #313244;
-    margin-bottom: 25px;
-    padding-bottom: 25px;
+    border-bottom: 1px dashed var(--border-color);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
-
 .entry:last-child {
     border-bottom: none;
-    margin-bottom: 0;
 }
 
 .entry-header {
@@ -108,79 +126,36 @@ body {
 }
 
 .entry h3 {
-    font-weight: 500;
-    font-size: 1.15em;
-    color: #cdd6f4;
+    font-weight: 600;
+    font-size: 1.3em;
     margin: 0;
 }
 
 .entry .date {
     font-weight: 400;
-    font-size: 0.9em;
-    color: #a6adc8;
+    font-size: 1em;
+    color: #555;
     flex-shrink: 0;
 }
 
 .entry .company {
-    font-weight: 400;
-    font-size: 1em;
-    color: #a6adc8;
-    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #444;
+    margin: 0 0 10px 0;
 }
 
-.entry p {
-    font-weight: 300;
-    line-height: 1.6;
-    color: #a6adc8;
-    margin: 0 0 15px 0;
+/* --- About Me Page Specific --- */
+.about-section {
+    text-align: center;
 }
-
-/* --- Skill Bubbles --- */
-.skill-bubbles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+.about-pfp-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px auto 30px auto;
 }
-
-.bubble {
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8em;
-    font-weight: 500;
-    color: #1e1e2e; /* Dark text for contrast */
-}
-
-/* Custom colors for bubbles */
-.bubble.cad { background-color: #f38ba8; } /* Red */
-.bubble.inventor { background-color: #fab387; } /* Orange */
-.bubble.fusion { background-color: #89b4fa; } /* Blue */
-.bubble.fusion-alt { background-color: #74c7ec; } /* Sapphire */
-.bubble.ltspice { background-color: #94e2d5; } /* Teal */
-.bubble.simulation { background-color: #a6e3a1; } /* Green */
-.bubble.microcontrollers { background-color: #cba6f7; } /* Mauve */
-.bubble.comms { background-color: #f5c2e7; } /* Pink */
-.bubble.solar { background-color: #f9e2af; } /* Yellow */
-.bubble.safety { background-color: #eba0ac; } /* Maroon */
-.bubble.electrical { background-color: #f38ba8; } /* Red */
-.bubble.testing { background-color: #a6e3a1; } /* Green */
-.bubble.diagnostics { background-color: #89b4fa; } /* Blue */
-.bubble.repair { background-color: #cba6f7; } /* Mauve */
-.bubble.wiring { background-color: #f38ba8; } /* Red */
-.bubble.troubleshoot { background-color: #fab387; } /* Orange */
-
-/* --- Custom Scrollbar Styling --- */
-.column::-webkit-scrollbar {
-    width: 8px;
-}
-.column::-webkit-scrollbar-track {
-    background: transparent;
-}
-.column::-webkit-scrollbar-thumb {
-    background-color: #45475a;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    background-clip: content-box;
-}
-.column::-webkit-scrollbar-thumb:hover {
-    background-color: #585b70;
-}
+.about-text {
+    text-align: left;
+}```
