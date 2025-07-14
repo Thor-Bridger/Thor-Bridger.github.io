@@ -1,148 +1,137 @@
 /* General page styling */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #1a1d24; /* Darker, sophisticated background */
-    color: #e6f1ff; /* Soft off-white for text */
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #121417 0%, #1c2026 100%);
+    color: #cdd6f4; /* Soft lavender-white text */
     margin: 0;
-    padding: 20px 40px;
+    padding: 0 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- Main Header --- */
 .main-header {
     text-align: center;
-    max-width: 800px;
-    margin: 20px auto 60px auto;
+    padding: 40px 20px 30px 20px;
+    flex-shrink: 0; /* Prevents header from shrinking */
 }
 
 .main-header h1 {
     font-weight: 700;
-    font-size: 3em;
-    letter-spacing: 1px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
     color: #ffffff;
-    margin: 0;
+    margin: 0 0 5px 0;
 }
 
 .main-header .subtitle {
     font-weight: 400;
-    font-size: 1.2em;
-    color: #a8b2c1; /* Lighter grey for subtitle */
-    margin: 10px 0;
-}
-
-.main-header .contact-info {
-    font-weight: 400;
-    font-size: 1em;
-    color: #a8b2c1;
-    margin: 10px 0 20px 0;
-}
-
-.main-header .contact-info a {
-    color: #61dafb; /* A vibrant accent color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.main-header .contact-info a:hover {
-    color: #ffffff;
-}
-
-.career-objective {
-    font-weight: 300;
-    max-width: 650px;
-    margin: 20px auto 0 auto;
-    line-height: 1.6;
-    color: #a8b2c1;
     font-size: 1.1em;
+    color: #a6adc8; /* Lighter grey for subtitle */
+    margin-bottom: 25px;
 }
 
-/* --- Content Sections --- */
-main {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.content-section {
-    margin-bottom: 50px;
-    /* Animation for smooth scrolling flare */
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeIn 0.8s ease-out forwards;
-    animation-play-state: paused;
-    animation-timeline: view();
-    animation-range-start: entry 10%;
-    animation-range-end: cover 20%;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.content-section h2 {
-    font-weight: 600;
-    font-size: 1.5em;
-    letter-spacing: 1px;
-    color: #61dafb;
-    border-bottom: 1px solid #3a414e;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 1px solid #3a414e;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
-
-.section-header h2 {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-.section-link {
-    font-weight: 400;
-    color: #a8b2c1;
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0077B5;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 0.9em;
+    font-weight: 500;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.linkedin-btn:hover {
+    background-color: #008cce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+}
+
+/* --- Two Column Container --- */
+.container {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-grow: 1; /* Allows container to fill available vertical space */
+    overflow: hidden; /* Prevents container from causing page scroll */
+    padding-bottom: 40px;
+}
+
+.column {
+    flex: 1;
+    background-color: rgba(30, 34, 42, 0.7); /* Translucent card background */
+    border: 1px solid #313244; /* Subtle border */
+    padding: 30px;
+    border-radius: 12px;
+    overflow-y: auto; /* This makes each column scroll independently */
+}
+
+.column h2 {
+    font-weight: 700;
+    font-size: 1.2em;
+    letter-spacing: 1.5px;
+    color: #89b4fa; /* A nice accent blue */
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: sticky; /* Keeps header at top on scroll */
+    top: -30px; /* Aligns with padding */
+    background: inherit; /* Inherits the translucent background */
+    padding-top: 30px;
+    padding-bottom: 15px;
 }
 
 /* --- Entry Styling (for each job/project) --- */
 .entry {
-    margin-bottom: 30px;
+    border-bottom: 1px solid #313244;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+}
+
+.entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .entry-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .entry h3 {
-    font-weight: 600;
-    font-size: 1.2em;
-    color: #e6f1ff;
+    font-weight: 500;
+    font-size: 1.15em;
+    color: #cdd6f4;
     margin: 0;
 }
 
 .entry .date {
     font-weight: 400;
     font-size: 0.9em;
-    color: #a8b2c1;
+    color: #a6adc8;
     flex-shrink: 0;
-    padding-left: 20px;
+}
+
+.entry .company {
+    font-weight: 400;
+    font-size: 1em;
+    color: #a6adc8;
+    margin-bottom: 10px;
 }
 
 .entry p {
     font-weight: 300;
-    line-height: 1.7;
-    color: #a8b2c1;
+    line-height: 1.6;
+    color: #a6adc8;
     margin: 0 0 15px 0;
 }
 
@@ -150,28 +139,48 @@ main {
 .skill-bubbles {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 .bubble {
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 15px;
-    font-size: 0.85em;
-    font-weight: 600;
-    color: #ffffff;
-    background-color: #4a586a; /* Default bubble color */
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #1e1e2e; /* Dark text for contrast */
 }
 
-/* Custom colors for each skill bubble */
-.bubble.cad { background-color: #c53030; }
-.bubble.inventor { background-color: #dd6b20; }
-.bubble.fusion { background-color: #2c5282; }
-.bubble.ltspice { background-color: #2c7a7b; }
-.bubble.simulation { background-color: #0c4a6e; }
-.bubble.microcontrollers { background-color: #553c9a; }
-.bubble.comms { background-color: #065f46; }
-.bubble.solar { background-color: #b7791f; }
-.bubble.safety { background-color: #9b2c2c; }
-.bubble.electrical { background-color: #b91c1c; }
-.bubble.diagnostics { background-color: #1e40af; }
-.bubble.repair { background-color: #6d28d9; }
+/* Custom colors for bubbles */
+.bubble.cad { background-color: #f38ba8; } /* Red */
+.bubble.inventor { background-color: #fab387; } /* Orange */
+.bubble.fusion { background-color: #89b4fa; } /* Blue */
+.bubble.fusion-alt { background-color: #74c7ec; } /* Sapphire */
+.bubble.ltspice { background-color: #94e2d5; } /* Teal */
+.bubble.simulation { background-color: #a6e3a1; } /* Green */
+.bubble.microcontrollers { background-color: #cba6f7; } /* Mauve */
+.bubble.comms { background-color: #f5c2e7; } /* Pink */
+.bubble.solar { background-color: #f9e2af; } /* Yellow */
+.bubble.safety { background-color: #eba0ac; } /* Maroon */
+.bubble.electrical { background-color: #f38ba8; } /* Red */
+.bubble.testing { background-color: #a6e3a1; } /* Green */
+.bubble.diagnostics { background-color: #89b4fa; } /* Blue */
+.bubble.repair { background-color: #cba6f7; } /* Mauve */
+.bubble.wiring { background-color: #f38ba8; } /* Red */
+.bubble.troubleshoot { background-color: #fab387; } /* Orange */
+
+/* --- Custom Scrollbar Styling --- */
+.column::-webkit-scrollbar {
+    width: 8px;
+}
+.column::-webkit-scrollbar-track {
+    background: transparent;
+}
+.column::-webkit-scrollbar-thumb {
+    background-color: #45475a;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+.column::-webkit-scrollbar-thumb:hover {
+    background-color: #585b70;
+}
