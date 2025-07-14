@@ -3,114 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thor Bridger - Engineering Portfolio</title>
+    <title>Thor Bridger - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="main-header">
-        <h1>THOR BRIDGER</h1>
-        <p class="subtitle">Electrical and Electronics Engineering Student</p>
-        <a href="https://www.linkedin.com" target="_blank" class="linkedin-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.25 6.5 1.75 1.75 0 0 1 6.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 11 14.25V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.6-1.4c2.5 0 4.5 2.1 4.5 5.1z"></path></svg>
-            View LinkedIn Profile
-        </a>
+    <header class="site-header">
+        <div class="header-content">
+            <img src="img/pfp.png" alt="Profile Picture" class="profile-picture">
+            <p class="header-tagline">A SPACE FOR MY PROJECTS, THOUGHTS, AND MORE...</p>
+        </div>
     </header>
 
-    <div class="container">
-        <!-- Projects Column -->
-        <div class="column">
-            <h2>PROJECTS</h2>
-            <div class="entry">
-                <h3>Ebike Battery Mount Brackets</h3>
-                <p>Involved measuring techniques alongside CAD to create custom brackets to mount a tube battery pack onto a bicycle.</p>
-                <div class="skill-bubbles">
-                    <div class="bubble cad">CAD</div>
-                    <div class="bubble inventor">Inventor</div>
-                </div>
-            </div>
-            <div class="entry">
-                <h3>NCOM Custom Bluetooth Module</h3>
-                <p>3D modelled a custom case in Fusion to house a complete Bluetooth module that attaches onto a motorcycle helmet.</p>
-                <div class="skill-bubbles">
-                    <div class="bubble fusion">3D Modelling</div>
-                    <div class="bubble fusion-alt">Fusion</div>
-                </div>
-            </div>
-            <div class="entry">
-                <h3>EV Battery Pack with Recycled Cells</h3>
-                <p>Created a high-current, compact 48V battery pack using recycled 18650 cells. Optimized layout and simulated in LTspice.</p>
-                <div class="skill-bubbles">
-                    <div class="bubble ltspice">LTspice</div>
-                    <div class="bubble simulation">Simulation</div>
-                </div>
-            </div>
-            <div class="entry">
-                <h3>Smart Energy Monitor Design</h3>
-                <p>Designed a smart energy monitor for a 50Hz system using microcontrollers with Bluetooth for real-time energy tracking.</p>
-                <div class="skill-bubbles">
-                    <div class="bubble microcontrollers">Microcontrollers</div>
-                    <div class="bubble comms">Bluetooth</div>
-                </div>
-            </div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="about.html">About Me</a>
+            <a href="https://www.behance.net/thorbridger" target="_blank">Projects</a>
+            <a href="experience.html">Work Experience</a>
         </div>
+        <div class="nav-right">
+            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                <img src="img/linkedin.png" alt="LinkedIn Icon" class="social-icon">
+            </a>
+        </div>
+    </nav>
 
-        <!-- Work Experience Column -->
-        <div class="column">
-            <h2>WORK EXPERIENCE</h2>
-            <div class="entry">
-                <div class="entry-header">
-                    <h3>Solar Installation Assistant</h3>
-                    <p class="date">Feb 2025</p>
-                </div>
-                <p class="company">Solar Contractor</p>
-                <p>Assisted in installing residential solar panel arrays, including mounting, cabling, and routing, while following strict safety protocols at heights.</p>
-                <div class="skill-bubbles">
-                    <div class="bubble solar">Renewable Energy</div>
-                    <div class="bubble safety">Safety Protocols</div>
-                </div>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <h3>Assistant Electrician</h3>
-                    <p class="date">Dec 2024</p>
-                </div>
-                <p class="company">AB Foods</p>
-                <p>Installed 160mm cabling for three-phase systems in confined spaces and used testing equipment to verify system functionality.</p>
-                <div class="skill-bubbles">
-                    <div class="bubble electrical">Three-Phase Systems</div>
-                    <div class="bubble testing">Electrical Testing</div>
-                </div>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <h3>E-Scooter Technician</h3>
-                    <p class="date">Feb 2024 - Jul 2024</p>
-                </div>
-                 <p class="company">Storm Rides</p>
-                <p>Diagnosed and repaired high-powered electric scooters and other mobility devices, enhancing hands-on technical and customer service skills.</p>
-                <div class="skill-bubbles">
-                    <div class="bubble diagnostics">Diagnostics</div>
-                    <div class="bubble repair">Technical Repair</div>
-                </div>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <h3>Switchboard & Control Panel Builder</h3>
-                    <p class="date">Oct 2021 - Feb 2023</p>
-                </div>
-                <p class="company">LM Control</p>
-                <p>Assembled and wired industrial electrical switchboards for power distribution and HVAC, interpreting technical diagrams and troubleshooting issues.</p>
-                <div class="skill-bubbles">
-                    <div class="bubble wiring">Electrical Wiring</div>
-                    <div class="bubble troubleshoot">Troubleshooting</div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <main class="content-wrapper">
+        <section class="entry">
+            <h1>Welcome</h1>
+            <p>
+                This website serves as a living portfolio for my work in the electrical and electronics engineering field. Here, you can find details about my professional experience, personal projects, and the skills I've developed along the way.
+            </p>
+            <p>
+                I'm passionate about building on what I've learned, gaining practical experience, and continuing to grow my skills in a hands-on environment. Please feel free to explore the different sections using the navigation bar above.
+            </p>
+        </section>
+    </main>
 
 </body>
 </html>
